@@ -1,0 +1,21 @@
+[package]
+name = "geocode-free"
+version = "0.1.0"
+authors = ["Doug Beardsley <mightybyte@gmail.com>"]
+edition = "2021"
+readme = "README.md"
+description = "Simple free geocoding via geocode.maps.co"
+license = "BSD3"
+
+[[bin]]
+name = "geocode"
+path = "src/geocode.rs"
+
+[dependencies]
+csv = "1.3.0"
+reqwest = { version = "0.11", default-features = false, features = ["blocking", "rustls-tls-native-roots"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+structopt = "0.3.26"
+tokio = { version = "1", features = ["macros", "full"] }
+
